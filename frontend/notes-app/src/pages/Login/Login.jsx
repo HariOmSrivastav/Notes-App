@@ -14,7 +14,7 @@ const Login = () => {
   useEffect(() => {
     // Redirect to dashboard if already logged in
     if (localStorage.getItem("token")) {
-      navigate('https://notes-app-068y.onrender.com/dashboard');
+      navigate('/dashboard');
     }
   }, [navigate]);
 
@@ -36,7 +36,7 @@ const Login = () => {
     try {
       console.log('Attempting login...');
 
-      const response = await axiosInstance.post("https://notes-app-068y.onrender.com/login", {
+      const response = await axiosInstance.post("/login", {
         email: email,
         password: password,
       });
@@ -70,7 +70,7 @@ const Login = () => {
             <button type='submit' className='btn-primary'>Login</button>
             <p className='text-sm text-center mt-4'>
               Not Registered Yet? {" "}
-              <Link to="https://notes-app-068y.onrender.com/signup" className='font-medium text-primary underline'>Create An Account</Link>
+              <Link to="/signup" className='font-medium text-primary underline'>Create An Account</Link>
             </p>
           </form>
         </div>

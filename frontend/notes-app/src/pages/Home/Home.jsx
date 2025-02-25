@@ -46,7 +46,7 @@ const Home = () => {
     // Get all notes
     const getAllNotes = async () => {
         try {
-            const response = await axiosInstance.get('https://notes-app-068y.onrender.com/get-all-notes');
+            const response = await axiosInstance.get('/get-all-notes');
             if (response.data && response.data.notes) {
                 setAllNotes(response.data.notes);
             }
@@ -58,7 +58,7 @@ const Home = () => {
     // Get user info
     const getUserInfo = async () => {
         try {
-            const response = await axiosInstance.get('https://notes-app-068y.onrender.com/get-user');
+            const response = await axiosInstance.get('/get-user');
             if (response.data && response.data.user) {
                 setUserInfo(response.data.user);
             }
@@ -73,7 +73,7 @@ const Home = () => {
     // Handle delete note
     const deleteNote = async (noteId) => {
         try {
-            await axiosInstance.delete(`https://notes-app-068y.onrender.com/delete-note/${noteId}`);
+            await axiosInstance.delete(`/delete-note/${noteId}`);
             showToastMessage('Note Deleted Successfully', 'delete');
             getAllNotes();
         } catch (error) {
@@ -93,7 +93,7 @@ const Home = () => {
     // Handle pin/unpin note
     const handlePinNote = async (noteId, isPinned) => {
         try {
-            await axiosInstance.put(`https://notes-app-068y.onrender.com/update-note-pinned/${noteId}`, {
+            await axiosInstance.put(`/update-note-pinned/${noteId}`, {
                 isPinned: !isPinned,
             });
             getAllNotes();
@@ -105,7 +105,7 @@ const Home = () => {
     // Search for a note
     const onSearchNote = async (query) => {
         try {
-            const response = await axiosInstance.get('https://notes-app-068y.onrender.com/search-notes', {
+            const response = await axiosInstance.get('/search-notes', {
                 params: { query },
             });
             if (response.data && response.data.notes) {
@@ -121,7 +121,7 @@ const Home = () => {
       const noteId = noteData._id;
 
       try {
-          const response = await axiosInstance.put(`https://notes-app-068y.onrender.com/update-note-pinned/${noteId}`, {
+          const response = await axiosInstance.put(`/update-note-pinned/${noteId}`, {
                isPinned : !noteData.isPinned,
           });
 

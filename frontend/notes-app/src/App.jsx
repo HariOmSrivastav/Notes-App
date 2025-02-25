@@ -7,7 +7,7 @@ import SignUp from './pages/SignUp/SignUp';
 // Protected Route Component
 const ProtectedRoute = ({ element }) => {
   const isAuthenticated = !!localStorage.getItem("token"); // Check if token exists
-  return isAuthenticated ? element : <Navigate to="https://notes-app-068y.onrender.com/login" replace />;
+  return isAuthenticated ? element : <Navigate to="/login" replace />;
 };
 
 const App = () => {
@@ -15,13 +15,13 @@ const App = () => {
     <Router>
       <Routes>
         {/* Redirect root path to login */}
-        <Route path="https://notes-app-068y.onrender.com/" element={<Navigate to="https://notes-app-068y.onrender.com/login" replace />} />
+        <Route path="/" element={<Navigate to="/login" replace />} />
         
         {/* Protected Dashboard Route */}
-        <Route path="https://notes-app-068y.onrender.com/dashboard" element={<ProtectedRoute element={<Home/>} />} />
+        <Route path="/dashboard" element={<ProtectedRoute element={<Home/>} />} />
         
-        <Route path="https://notes-app-068y.onrender.com/login" element={<Login/>} />
-        <Route path="https://notes-app-068y.onrender.com/signup" element={<SignUp/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/signup" element={<SignUp/>} />
       </Routes>
     </Router>
   );
