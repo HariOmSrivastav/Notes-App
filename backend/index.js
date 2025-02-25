@@ -28,7 +28,7 @@ app.use(express.json()) ;
 
 app.use(
     cors({
-        origin: ["https://notes-app-ten-livid.vercel.app/"],
+        origin: ["https://notes-app-three-umber.vercel.app/"],
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true,
     })
