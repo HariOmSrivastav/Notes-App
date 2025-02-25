@@ -15,7 +15,7 @@ const App = () => {
     <Router>
       <Routes>
         {/* Redirect root path to login */}
-        <Route path="https://notes-app-068y.onrender.com/" element={<Navigate to="/login" replace />} />
+        <Route path="https://notes-app-068y.onrender.com/" element={<Navigate to="https://notes-app-068y.onrender.com/login" replace />} />
         
         {/* Protected Dashboard Route */}
         <Route path="https://notes-app-068y.onrender.com/dashboard" element={<ProtectedRoute element={<Home/>} />} />
