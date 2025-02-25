@@ -51,7 +51,7 @@ const SignUp = () => {
 
       if (response.data && response.data.accessToken) {
         localStorage.setItem('token', response.data.accessToken);
-        navigate('/dashboard');
+        navigate('https://notes-app-068y.onrender.com/dashboard');
       }
     } catch (error) {
       // Handle API Error
@@ -100,7 +100,7 @@ const SignUp = () => {
 
             <p className="text-sm text-center mt-4">
               Already have an account?{" "}
-              <Link to="/login" className="font-medium text-primary underline">
+              <Link to="https://notes-app-068y.onrender.com/login" className="font-medium text-primary underline">
                 Login
               </Link>
             </p>

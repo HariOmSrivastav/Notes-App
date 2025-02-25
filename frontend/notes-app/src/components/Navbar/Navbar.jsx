@@ -11,7 +11,7 @@ const Navbar = ({userInfo , onSearchNote , handleClearSearch }) => {
 
   const onLogout = () => {
     localStorage.clear()
-    navigate("/login")
+    navigate("https://notes-app-068y.onrender.com/login")
   };
 
   const handleSearch = () => {
