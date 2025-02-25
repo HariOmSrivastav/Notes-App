@@ -28,10 +28,11 @@ app.use(express.json()) ;
 
 app.use(
     cors({
-        origin : "*",
+        origin: ["https://notes-app-ten-livid.vercel.app/"],
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        credentials: true,
     })
-)
-
+);
 app.get("/" , (req,res)=>{
     res.json({data: "hello"});
 });
