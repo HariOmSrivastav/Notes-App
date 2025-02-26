@@ -9,6 +9,6 @@ export default defineConfig({
     host: true, // Allows external access
   },
   preview: {
-    allowedHosts: ['*'], // Allow all hosts
+    allowedHosts: ['notes-app-frontend-a3mv.onrender.com'], // Allow your Render host
   }
 })
